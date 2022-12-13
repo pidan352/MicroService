@@ -1,0 +1,11 @@
+server:
+  port: 8761
+eureka:
+  instance:
+    hostname: eureka-server
+  client:
+    # 两个false是说将当前的工程作为服务端，否则改工程的服务也可能被当成客户端
+    register-with-eureka: false
+    fetch-registry: false
+    service-url:
+      defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
